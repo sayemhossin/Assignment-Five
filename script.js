@@ -1,17 +1,17 @@
 
 
 
-
 const seats = document.getElementsByClassName('seat-name');
 
 let availableSeat = 39
 let seatBooking = 1
 let totalPrice = 0
 for(const seat of seats){
-   seat.addEventListener('click',function(e){
+   seat.addEventListener('click',function add(e){
     
-  
-
+  if(addEventListener === seat){
+    removeEventListener()
+  }
 
     // seat count
     const totalSeat = document.getElementById('total-seat').innerText = availableSeat
@@ -19,7 +19,7 @@ for(const seat of seats){
     const bookingSeat = document.getElementById('seat-booking').innerText=seatBooking
     seatBooking++
 
-
+    
    
 
     const seatName = e.target.innerText
@@ -33,21 +33,21 @@ for(const seat of seats){
     h1.innerText = 'Economy'
     h2.innerText = 550
     h2.style.marginLeft='29px'
+
+   if(bookingSeat > 4){
+      alert("You can booked only 4 seat")
+      removeEventListener()
+   }
+    else{
+     
+    }
+
+
   seatNumber.appendChild(p)
   seatNumber.appendChild(h1)
   seatNumber.appendChild(h2)
 
 e.target.style.backgroundColor = 'green'
-
-
-
-
-
-
-
-
-
-
 
  
     // total price
@@ -56,18 +56,22 @@ e.target.style.backgroundColor = 'green'
       document.getElementById('total-price').innerText = totalPrice
       document.getElementById('grand-total').innerText=totalPrice
 
-
-
    })
+   
 }
 
 
 const discountBtn = document.getElementById('coupon-btn')
+
 discountBtn.addEventListener('click',function(){
 
     const input = document.getElementById('input-field').value
     const couponCode = input
     
+    if(totalPrice < 2200){
+      alert("at least buy 4 ticket to get the voucher")
+    }
+    else{
 
      if(couponCode === 'NEW15'){
       const discountPrice = document.getElementById('discount')
@@ -98,6 +102,7 @@ else{
   document.getElementById('grand-total').innerText=totalPrice
 
 }
-
+}
 
 })
+
