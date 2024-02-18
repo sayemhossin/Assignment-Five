@@ -8,10 +8,7 @@ let seatBooking = 1
 let totalPrice = 0
 for(const seat of seats){
    seat.addEventListener('click',function add(e){
-    
-  if(addEventListener === seat){
-    removeEventListener()
-  }
+
 
     // seat count
     const totalSeat = document.getElementById('total-seat').innerText = availableSeat
@@ -34,13 +31,14 @@ for(const seat of seats){
     h2.innerText = 550
     h2.style.marginLeft='29px'
 
+
+
+
    if(bookingSeat > 4){
       alert("You can booked only 4 seat")
       removeEventListener()
    }
-    else{
-     
-    }
+    
 
 
   seatNumber.appendChild(p)
@@ -49,6 +47,8 @@ for(const seat of seats){
 
 e.target.style.backgroundColor = 'green'
 
+
+  
  
     // total price
     totalPrice = totalPrice + price
