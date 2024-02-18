@@ -10,13 +10,15 @@ let totalPrice = 0
 for(const seat of seats){
    seat.addEventListener('click',function(e){
     
+  
+
+
     // seat count
     const totalSeat = document.getElementById('total-seat').innerText = availableSeat
     availableSeat--
     const bookingSeat = document.getElementById('seat-booking').innerText=seatBooking
     seatBooking++
 
-e.target.style.backgroundColor = 'green'
 
    
 
@@ -25,20 +27,26 @@ e.target.style.backgroundColor = 'green'
      
     const seatNumber = document.getElementById('seat-number')
     const p =document.createElement('p')
-
+    const h1 = document.createElement('h1')
+    const h2 = document.createElement('h1')
     p.innerText = seatName
-  
-if(parseInt(seatNumber) <= 4){
-  return 
-}else{
-  alert('back')
-}
+    h1.innerText = 'Economy'
+    h2.innerText = 550
+    h2.style.marginLeft='29px'
+  seatNumber.appendChild(p)
+  seatNumber.appendChild(h1)
+  seatNumber.appendChild(h2)
+
+e.target.style.backgroundColor = 'green'
 
 
 
-seatNumber.appendChild(p)
 
-  
+
+
+
+
+
 
 
  
@@ -91,6 +99,5 @@ else{
 
 }
 
-     
 
 })
