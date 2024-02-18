@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment Five</title>
+    <link rel="shortcut icon" href="images/bus-icon.png" type="image/x-icon">
 
     <!-- daisy & tailwind link -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
@@ -72,7 +73,7 @@
               <span class="text-[#1DD100]">P Paribahan</span> </h1>
 
         <p class="mb-5">Yes, you can run unit tests and view the results directly within the app. <br> The integrated testing features allow for a streamlined .</p>
-        <button class="btn text-[#030712] text-xl font-bold bg-[#1DD100] btn-primary">Buy Tickets</button>
+        <button id="buy-btn" class="btn text-[#030712] text-xl font-bold bg-[#1DD100] btn-primary">Buy Tickets</button>
       </div>
     </div>
   </div>
@@ -149,7 +150,7 @@
 </div>
   <div class="flex bg-[#1DD10026] p-3 gap-2 rounded-xl">
        <img src="images/seat-green.png" alt="">
-       <p class="text-[#1DD100] text-xl font-bold">40 seats left</p>
+       <p class="text-[#1DD100] text-xl font-bold"><span id="total-seat">40</span> seats left</p>
    </div>
     </div>
 <!-- simple form -->
@@ -225,7 +226,7 @@
 </div>
 
 <!-- seat name -->
-<div class="grid grid-cols-5 gap-5 md:gap-9 mt-6">
+<div class="seat-div grid grid-cols-5 gap-5 md:gap-9 mt-6">
 <!-- 1 -->
     
 <p class="text-center rounded-lg p-4 text-xl md:text-2xl font-medium">A</p>
@@ -322,39 +323,40 @@
 
      <div class="flex justify-between px-2 md:px-11 mt-4">
 
-       <h2 class="text-2xl font-bold">Seat <sup class="text-white px-2 rounded-lg bg-[#1DD100]">2</sup></h2>
+       <h2 class="text-2xl font-bold">Seat <sup class="text-white px-2 rounded-lg bg-[#1DD100]"><span id="seat-booking">0</span></sup></h2>
         <h2 class="text-2xl font-bold">class</h2>
           <h2 class="text-2xl font-bold">price</h2>
     </div>
 <hr>
 
 <!-- select seat name div -->
-<div class="text-4xl pl-3 md:pl-14 font-bold">
+<div id="seat-number" class=" text-4xl pl-3 md:pl-14 font-bold">
 <p>c1</p>
+
 
 </div>
 <hr>
-
+<!-- total price -->
 <div class="flex justify-between mt-16">
     <h1 class="text-2xl font-bold">Total Price</h1>
-    <h1 class="text-2xl font-bold pr-10">BDT <span>1100</span></h1>
+    <h1 class="text-2xl font-bold pr-10">BDT <span id="total-price">0</span></h1>
 </div>
-
+<!-- discount -->
 <div class="flex justify-between mt-4">
     <h1 class="text-2xl font-bold">Discount</h1>
-    <h1 class="text-2xl font-bold pr-10">BDT <span>1100</span></h1>
+    <h1 class="text-2xl font-bold pr-10">BDT <span id="discount">0</span></h1>
 </div>
     
 <!-- voucher box -->
 <div class=" flex flex-col md:flex-row text-center mt-7 mb-7">
-<input class="h-16 w-auto md:w-80 p-5 font-bold text-2xl rounded-bl-xl rounded-tl-xl" type="text" placeholder="Have any copupon?">
-<button class="btn h-16 bg-[#1DD100] ">Apply</button>
+<input id="input-field" class="h-16 w-auto md:w-80 p-5 font-bold text-2xl rounded-bl-xl rounded-tl-xl" type="text" placeholder="Have any copupon?">
+<button id="coupon-btn" class="btn h-16 bg-[#1DD100] ">Apply</button>
 </div>
 
 <!-- grand total -->
 <div class="flex justify-between mt-4">
     <h1 class="text-2xl font-bold">Grand Total</h1>
-    <h1 class="text-2xl font-bold pr-10">BDT <span>1100</span></h1>
+    <h1 class="text-2xl font-bold pr-10">BDT <span id="grand-total">0</span></h1>
 </div>
 
 </div>
@@ -410,7 +412,7 @@
 
 
 
-
+<script src="script.js"></script>
 
 </body>
 </html>
